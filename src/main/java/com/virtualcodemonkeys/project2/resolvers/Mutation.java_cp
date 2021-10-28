@@ -1,0 +1,20 @@
+package com.virtualcodemonkeys.project2.resolvers;
+
+import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+import com.virtualcodemonkeys.project2.models.SuperCustomer;
+import com.virtualcodemonkeys.project2.repos.SuperCustomerRepo;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
+public class Mutation implements GraphQLMutationResolver {
+    private SuperCustomerRepo customerRepo;
+
+    public Mutation(SuperCustomerRepo repo){
+        this.customerRepo = repo;
+    }
+
+    public SuperCustomer addCharacter(Integer custid, Integer sortcode, Integer accno, String title, String fname, String sname, Integer abalance, Integer cbalance, String postcode, Integer dob, String custtype, String mandate){
+        return customerRepo.addCharacter(custid, sortcode, accno, title, fname, sname, abalance, cbalance, postcode, dob, custtype, mandate);
+    }
+
+}

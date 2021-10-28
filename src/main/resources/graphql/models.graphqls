@@ -1,0 +1,21 @@
+type SuperCustomer {
+  id: String!
+  sortcode: Int
+  accno: Int 
+  title: String!
+  fname: String!
+  sname: String!
+  abalance: Int
+  cbalance: Int
+  postcode: String!
+  dob: Int
+  custtype: String!
+  mandate: String!
+}
+
+type Query {
+  characters: [SuperCustomer]!
+  characterById(id:String): SuperCustomer
+}
+
+
